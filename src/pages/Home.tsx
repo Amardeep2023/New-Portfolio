@@ -9,7 +9,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section id="home" className="min-h-[90vh] flex flex-col md:flex-row items-center border-b border-outline-variant/10">
-        <div className="w-full md:w-1/2 p-8 md:p-16 lg:p-24 space-y-10">
+        <div className="w-full  p-8 md:p-16 lg:p-24 space-y-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -48,14 +48,14 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="w-full md:w-2/5 h-[50vh] md:h-[90vh] overflow-hidden bg-surface-container relative">
+        {/* <div className="w-full md:w-2/5 h-[50vh] md:h-[90vh] overflow-hidden bg-surface-container relative">
           <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
           <img
             alt="Professional Workspace"
             className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000 transform hover:scale-110"
             src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
           />
-        </div>
+        </div> */}
       </section>
       <section>
         <About/>
