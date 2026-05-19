@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import About from "./About";
+import TechSkills from "../components/TechSkills";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
           >
             <p className="text-primary font-bold tracking-[0.3em] uppercase text-xs">Based in Pune, Maharashtra</p>
             <h1 className="text-6xl md:text-[6.5rem] font-bold text-on-surface tracking-tighter leading-[0.85] font-display">
-              Building with <br />
+              Web Developer , Data Analyst <br />
               <span className="italic text-primary-dim">Precise</span> Craft.
             </h1>
           </motion.div>
@@ -56,7 +57,16 @@ export default function Home() {
           />
         </div>
       </section>
-
+      <section>
+        <About/>
+      </section>
+      <section className=""><TechSkills /></section>
+      <div className="flex flex-col justify-center items-center gap-8 px-auto my-10">
+        <p className="text-5xl md:text-6xl font-bold text-on-surface tracking-tighter font-display">Wanna check out my <span className="italic ">Crafts!</span></p>
+        <div><Link to="/projects" className="inline-block bg-primary text-on-primary px-14 py-6 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-2xl shadow-primary/20">
+          Explore My Projects
+        </Link></div>
+      </div>
       {/* CTA */}
       <section className="py-40 px-8 text-center bg-surface relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
@@ -77,9 +87,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section>
-        <About/>
-      </section>
+      
+      
     </>
   );
 }

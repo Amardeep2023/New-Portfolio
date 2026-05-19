@@ -165,13 +165,13 @@ export const Footer = () => (
         Amardeep Singh Chabada
       </Link>
       <nav className="flex flex-wrap justify-center gap-x-16 gap-y-6">
-        <a href="https://github.com/Amardeep2023" target="_blank" rel="noreferrer" className="text-on-surface-variant hover:text-primary transition-all text-sm tracking-[0.2em] font-bold uppercase">Github</a>
-        <a href="https://linkedin.com/in/amardeep-singh-chabada" target="_blank" rel="noreferrer" className="text-on-surface-variant hover:text-primary transition-all text-sm tracking-[0.2em] font-bold uppercase">LinkedIn</a>
-        <a href="mailto:amardeepsinghchabada@gmail.com" className="text-on-surface-variant hover:text-primary transition-all text-sm tracking-[0.2em] font-bold uppercase">Email Me</a>
+        <a href="https://github.com/Amardeep2023" target="_blank" rel="noreferrer" className="text-on-surface-variant hover:text-primary flex gap-2 transition-all text-sm tracking-[0.2em] font-bold uppercase"><Github size={20} />Github</a>
+        <a href="https://linkedin.com/in/amardeep-singh-chabada" target="_blank" rel="noreferrer" className="text-on-surface-variant flex gap-2 hover:text-primary transition-all text-sm tracking-[0.2em] font-bold uppercase"><Linkedin size={20} />LinkedIn</a>
+        <a href="mailto:amardeepsinghchabada@gmail.com" className="text-on-surface-variant hover:text-primary transition-all flex gap-2 text-sm tracking-[0.2em] font-bold uppercase"><Mail size={20} />Email Me</a>
       </nav>
       <div className="w-full h-[1px] bg-outline-variant/10"></div>
       <div className="flex flex-col md:flex-row justify-between items-center w-full gap-6 text-[10px] font-bold text-on-surface-variant/50 tracking-[0.2em] uppercase">
-        <span>© {new Date().getFullYear()} Amardeep Chabada. All Rights Reserved.</span>
+        <span>© {new Date().getFullYear()} Amardeep Singh Chabada. All Rights Reserved.</span>
         <span className="flex items-center gap-2">Built with <span className="text-primary italic">Rooted</span> Precision</span>
       </div>
     </div>
