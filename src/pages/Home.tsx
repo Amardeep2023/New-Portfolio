@@ -9,7 +9,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section id="home" className="min-h-[90vh] flex flex-col md:flex-row items-center border-b border-outline-variant/10">
-        <div className="w-full md:w-3/5 p-8 md:p-16 lg:p-24 space-y-10">
+        <div className="w-full md:w-1/2 p-8 md:p-16 lg:p-24 space-y-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ export default function Home() {
           >
             <p className="text-primary font-bold tracking-[0.3em] uppercase text-xs">Based in Pune, Maharashtra</p>
             <h1 className="text-6xl md:text-[6.5rem] font-bold text-on-surface tracking-tighter leading-[0.85] font-display">
-              Web Developer , Data Analyst <br />
+              Web Developer, Data Analyst <br />
               <span className="italic text-primary-dim">Precise</span> Craft.
             </h1>
           </motion.div>

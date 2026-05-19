@@ -1,7 +1,26 @@
 import { motion } from "motion/react";
 import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
 
+import { useRef, type FormEvent } from "react";
+
 export default function Contact() {
+  const nameRef = useRef<HTMLInputElement | null>(null);
+  const emailRef = useRef<HTMLInputElement | null>(null);
+  const subjectRef = useRef<HTMLInputElement | null>(null);
+  const messageRef = useRef<HTMLTextAreaElement | null>(null);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const name = nameRef.current?.value ?? "";
+    const email = emailRef.current?.value ?? "";
+    const subject = subjectRef.current?.value ?? "";
+    const message = messageRef.current?.value ?? "";
+    const mailto = `mailto:amardeepsinghchabada@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    )}`;
+    window.location.href = mailto;
+  };
+
   return (
     <section className="py-24 px-8 md:px-16 lg:px-24 min-h-screen">
       <div className="max-w-7xl mx-auto space-y-16">
@@ -22,9 +41,10 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-10">
           <div className="lg:col-span-5 space-y-6">
+            {/* ...existing code... */}
             {[
               { icon: <Mail />, title: "Email", val: "amardeepsinghchabada@gmail.com", link: "mailto:amardeepsinghchabada@gmail.com" },
-              { icon: <Linkedin />, title: "Professional Network", val: "linkedin.com/in/amardeep-singh-chabada", link: "https://linkedin.com/in/amardeep-singh-chabada" },
+              { icon: <Linkedin />, title: "Professional Network", val: "linkedin.com/in/amardeep-singh-chabada", link: "https://www.linkedin.com/in/amardeep-singh-chabada-995261264?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BpybxFCQ8Tpev3wPpo92DNQ%3D%3D" },
               { icon: <Github />, title: "Code Repository", val: "github.com/Amardeep2023", link: "https://github.com/Amardeep2023" },
             ].map((item, i) => (
               <motion.a
@@ -59,7 +79,7 @@ export default function Contact() {
           </div>
 
           <motion.div className="lg:col-span-7 bg-surface-container rounded-3xl p-8 md:p-14 border border-outline-variant/10">
-            <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-10" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="space-y-3">
                   <label className="text-[10px] text-on-surface-variant/60 uppercase tracking-widest font-bold ml-2">Name</label>
@@ -67,6 +87,7 @@ export default function Contact() {
                     type="text"
                     placeholder="E.g. Rowan Thorne"
                     className="w-full bg-surface-container-highest border border-outline-variant/10 rounded-2xl p-5 focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder:opacity-30 text-on-surface"
+                    ref={nameRef}
                   />
                 </div>
                 <div className="space-y-3">
@@ -75,6 +96,7 @@ export default function Contact() {
                     type="email"
                     placeholder="hello@company.com"
                     className="w-full bg-surface-container-highest border border-outline-variant/10 rounded-2xl p-5 focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder:opacity-30 text-on-surface"
+                    ref={emailRef}
                   />
                 </div>
               </div>
@@ -84,6 +106,7 @@ export default function Contact() {
                   type="text"
                   placeholder="Project Inquiry"
                   className="w-full bg-surface-container-highest border border-outline-variant/10 rounded-2xl p-5 focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder:opacity-30 text-on-surface"
+                  ref={subjectRef}
                 />
               </div>
               <div className="space-y-3">
@@ -92,9 +115,10 @@ export default function Contact() {
                   rows={6}
                   placeholder="Tell me about your vision..."
                   className="w-full bg-surface-container-highest border border-outline-variant/10 rounded-2xl p-5 focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all placeholder:opacity-30 resize-none text-on-surface"
+                  ref={messageRef}
                 ></textarea>
               </div>
-              <button className="w-full bg-primary text-on-primary py-6 rounded-full font-bold text-xl hover:opacity-90 transition-all flex items-center justify-center gap-4 group shadow-lg shadow-primary/20">
+              <button type="submit" className="w-full bg-primary text-on-primary py-6 rounded-full font-bold text-xl hover:opacity-90 transition-all flex items-center justify-center gap-4 group shadow-lg shadow-primary/20">
                 Send Message <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
